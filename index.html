@@ -3,66 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>회사명 | Company</title>
-  <meta name="description" content="회사 소개, 사업 영역, 연락처를 안내하는 공식 홈페이지." />
-  <meta property="og:title" content="회사명" />
-  <meta property="og:description" content="회사 소개, 사업 영역, 연락처를 안내하는 공식 홈페이지." />
+  <title>디자인도하다 | Interior Design Studio</title>
+  <meta name="description" content="주거·상업 공간 인테리어 디자인/시공 전문. 포트폴리오, 서비스, 고객 후기, 상담 문의." />
+  <meta property="og:title" content="디자인도하다" />
+  <meta property="og:description" content="주거·상업 공간 인테리어 디자인/시공 전문 포트폴리오." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://username.github.io/" />
   <meta property="og:image" content="/assets/og-image.png" />
   <link rel="icon" href="/assets/favicon.ico" />
+  <!-- Swiper & SimpleLightbox (CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/simplelightbox@2.14.1/dist/simple-lightbox.min.css" />
   <style>
     :root{
-      --bg:#0b0f1a;--bg-soft:#111827;--panel:#0f172a;--text:#e5e7eb;--muted:#9ca3af;--acc:#60a5fa;--acc-2:#34d399;--border:#1f2937;
-      --max:1100px;
+      --bg:#0a0c10;--panel:#0f131a;--text:#eceff4;--muted:#a7b0be;--acc:#d4a373;--border:#1b2230;--max:1180px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple SD Gothic Neo,Noto Sans KR,"맑은 고딕",sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 80% -10%,#1e293b10,transparent),var(--bg)}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple SD Gothic Neo,Noto Sans KR,"Pretendard","맑은 고딕",sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 80% -10%,#2a314010,transparent),var(--bg)}
     a{color:var(--acc);text-decoration:none}
-    img{max-width:100%;display:block}
+    img{max-width:100%;display:block;border-radius:14px}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,15,26,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
-    .logo img{width:28px;height:28px;border-radius:6px;border:1px solid var(--border)}
-    .nav a{color:var(--text);opacity:.9}
-    .menu{display:flex;gap:18px}
-    .menu a{font-size:14px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--border);background:linear-gradient(180deg,#111827,#0b1220);border-radius:12px;color:var(--text)}
-    .btn:hover{border-color:#334155}
-    .hero{padding:80px 0;background:
-      radial-gradient(800px 300px at 10% -10%,#60a5fa18,transparent),
-      radial-gradient(800px 300px at 90% 0%,#34d39918,transparent);
-      border-bottom:1px solid var(--border)}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
-    h1{font-size:44px;line-height:1.1;margin:0 0 14px}
-    .lead{font-size:18px;color:var(--muted);margin-bottom:22px}
+    header{position:sticky;top:0;z-index:50;background:rgba(10,12,16,.75);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo img{width:30px;height:30px;border-radius:8px;border:1px solid var(--border)}
+    .menu{display:flex;gap:22px}
+    .menu a{color:var(--text);opacity:.9;font-size:15px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border:1px solid var(--border);background:linear-gradient(180deg,#121722,#0d111a);border-radius:12px;color:var(--text)}
+    .btn:hover{border-color:#384354}
+
+    /* Hero */
+    .hero{padding:96px 0 72px;border-bottom:1px solid var(--border);background:
+      radial-gradient(900px 320px at 10% -10%,#d4a37322,transparent),
+      radial-gradient(900px 320px at 90% 0%,#7fbfa922,transparent);}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+    h1{font-size:48px;line-height:1.07;margin:0 0 16px}
+    .lead{font-size:18px;color:var(--muted);margin-bottom:24px}
     .tag{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted);margin-bottom:14px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:linear-gradient(180deg,#0e1526,#0c1222);border:1px solid var(--border);border-radius:16px;padding:18px}
-    .card h3{margin:0 0 8px}
-    section{padding:64px 0;border-bottom:1px solid var(--border)}
-    h2{font-size:28px;margin:0 0 12px}
+
+    /* Sections */
+    section{padding:72px 0;border-bottom:1px solid var(--border)}
+    h2{font-size:30px;margin:0 0 12px}
     .muted{color:var(--muted)}
-    .list{display:grid;gap:10px}
-    .list li{background:#0b1220;border:1px solid var(--border);padding:12px 14px;border-radius:12px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,#101521,#0d131d);border:1px solid var(--border);border-radius:16px;padding:18px}
+
+    /* Portfolio gallery */
+    .filter{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}
+    .chip{padding:8px 12px;border:1px solid var(--border);border-radius:999px;font-size:12px;cursor:pointer}
+    .chip.active{border-color:var(--acc);color:var(--acc)}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .gallery a{position:relative;overflow:hidden}
+    .gallery a img{transition:transform .4s ease}
+    .gallery a:hover img{transform:scale(1.04)}
+
+    /* Testimonials */
+    .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    blockquote{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+    .stars{letter-spacing:2px}
+
+    /* Process */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{border:1px dashed var(--border);border-radius:16px;padding:14px}
+    .step .n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid var(--border);border-radius:999px;margin-bottom:8px}
+
+    /* Contact */
     .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
-    input,textarea{width:100%;background:#0b1220;border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text)}
+    input,textarea,select{width:100%;background:#0b1220;border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text)}
     label{font-size:13px;color:var(--muted)}
     form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     form .actions{display:flex;gap:10px;align-items:center}
-    footer{padding:26px 0;color:var(--muted)}
-    .badge{font-size:12px;color:var(--muted);border:1px dashed var(--border);padding:6px 8px;border-radius:10px}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .timeline{border-left:1px dashed #334155;padding-left:14px}
-    .timeline .item{margin:8px 0}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:999px;font-size:12px}
+
+    footer{padding:28px 0;color:var(--muted)}
 
     /* Responsive */
-    @media (max-width: 900px){
-      .hero-grid,.cards,.contact,.grid-2{grid-template-columns:1fr}
-      h1{font-size:34px}
+    @media (max-width: 980px){
+      .hero-grid,.cards,.contact,.grid-2,.testi,.steps,.gallery{grid-template-columns:1fr}
+      h1{font-size:36px}
     }
   </style>
 </head>
@@ -70,106 +89,138 @@
   <header>
     <div class="wrap nav">
       <a class="logo" href="#home">
-        <img src="/assets/logo.png" alt="회사 로고" />
-        <span>회사명</span>
+        <img src="/assets/logo.png" alt="로고" />
+        <span>디자인도하다</span>
       </a>
       <nav class="menu">
+        <a href="#portfolio">포트폴리오</a>
+        <a href="#services">서비스</a>
         <a href="#about">회사소개</a>
-        <a href="#business">사업영역</a>
-        <a href="#news">공지/뉴스</a>
-        <a href="#contact" class="btn">연락처</a>
+        <a href="#contact" class="btn">상담 문의</a>
       </nav>
     </div>
   </header>
 
+  <!-- Hero -->
   <main id="home" class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="tag">Since 20XX • 신뢰와 혁신</span>
-        <h1>당신의 비즈니스를 성장시키는 <br/>산업 전문 파트너</h1>
-        <p class="lead">회사 소개 한 줄 슬로건을 넣어주세요. 핵심 역량과 고객가치를 간결하게 전달하면 좋습니다.</p>
+        <span class="tag">Residential · Commercial · Renovation</span>
+        <h1>공간을 예술로,<br/>삶을 디자인합니다</h1>
+        <p class="lead">주거·상업 공간 인테리어 디자인과 시공을 원스톱으로 제공합니다. 라이프스타일을 반영한 맞춤형 설계로 공간의 가치를 높입니다.</p>
         <div class="actions">
-          <a href="#business" class="btn">사업 보기</a>
-          <a href="#contact" class="btn" style="border-style:dashed">문의하기</a>
+          <a href="#portfolio" class="btn">포트폴리오 보기</a>
+          <a href="#contact" class="btn" style="border-style:dashed">무료 상담</a>
         </div>
       </div>
       <div>
         <div class="card" style="height:100%">
           <h3>핵심 지표</h3>
-          <p class="muted">간단한 신뢰 지표를 보여주세요.</p>
+          <p class="muted">신뢰를 보여주는 간단한 수치입니다.</p>
           <div class="grid-2" style="margin-top:10px">
-            <div class="card"><div class="pill">누적 납품 <strong>120K+</strong></div><p class="muted">제품/프로젝트</p></div>
-            <div class="card"><div class="pill">주요 고객 <strong>30+</strong></div><p class="muted">국내외</p></div>
+            <div class="card"><div class="stars">★★★★★</div><p class="muted">고객 만족도 4.9/5.0</p></div>
+            <div class="card"><div><strong>200+ 프로젝트</strong></div><p class="muted">주거/상업</p></div>
           </div>
         </div>
       </div>
     </div>
   </main>
 
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="wrap">
+      <h2>포트폴리오</h2>
+      <p class="muted">거실 · 주방 · 카페 · 오피스 등 용도별 사례를 확인하세요. 이미지를 클릭하면 확대됩니다.</p>
+      <div class="filter">
+        <span class="chip active" data-filter="all">전체</span>
+        <span class="chip" data-filter="res">주거</span>
+        <span class="chip" data-filter="caf">카페</span>
+        <span class="chip" data-filter="off">오피스</span>
+      </div>
+      <div class="gallery" id="gallery">
+        <a href="/assets/portfolio/living-1.jpg" class="item" data-cat="res"><img src="/assets/portfolio/living-1.jpg" alt="거실 리모델링"></a>
+        <a href="/assets/portfolio/kitchen-1.jpg" class="item" data-cat="res"><img src="/assets/portfolio/kitchen-1.jpg" alt="주방 리모델링"></a>
+        <a href="/assets/portfolio/cafe-1.jpg" class="item" data-cat="caf"><img src="/assets/portfolio/cafe-1.jpg" alt="카페 인테리어"></a>
+        <a href="/assets/portfolio/office-1.jpg" class="item" data-cat="off"><img src="/assets/portfolio/office-1.jpg" alt="오피스 인테리어"></a>
+        <a href="/assets/portfolio/bed-1.jpg" class="item" data-cat="res"><img src="/assets/portfolio/bed-1.jpg" alt="침실 디자인"></a>
+        <a href="/assets/portfolio/cafe-2.jpg" class="item" data-cat="caf"><img src="/assets/portfolio/cafe-2.jpg" alt="카페 바 리뉴얼"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="wrap">
+      <h2>서비스</h2>
+      <div class="cards" style="margin-top:10px">
+        <div class="card">
+          <h3>컨셉 기획 & 3D 제안</h3>
+          <p class="muted">공간 분석과 무드보드, 3D 렌더로 방향성을 명확히 제시합니다.</p>
+        </div>
+        <div class="card">
+          <h3>자재 선정 & 가구 맞춤</h3>
+          <p class="muted">바닥·벽·조명·가구를 공간 콘셉트와 예산에 맞게 큐레이션합니다.</p>
+        </div>
+        <div class="card">
+          <h3>시공 & 현장 관리</h3>
+          <p class="muted">전문 시공팀과 일정·품질을 통합 관리합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="wrap">
+      <h2>고객 후기</h2>
+      <div class="testi" style="margin-top:10px">
+        <div class="card"><div class="stars">★★★★★</div><blockquote>시공 동안 소통이 매끄럽고 마감 퀄리티가 높았습니다. 재방문 의사 100%!</blockquote><p class="muted">— 박** / 주거 33평</p></div>
+        <div class="card"><div class="stars">★★★★★</div><blockquote>브랜드 아이덴티티를 공간에 잘 녹여 매출 상승에 도움이 되었습니다.</blockquote><p class="muted">— 카페 대표 K**</p></div>
+        <div class="card"><div class="stars">★★★★☆</div><blockquote>예산 범위 내 최선의 선택지를 제안해 주어 만족스러웠습니다.</blockquote><p class="muted">— 스타트업 매니저 L**</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="wrap">
+      <h2>진행 절차</h2>
+      <div class="steps" style="margin-top:10px">
+        <div class="step"><div class="n">1</div><strong>상담</strong><p class="muted">요구사항, 예산, 일정 확인</p></div>
+        <div class="step"><div class="n">2</div><strong>현장 실측</strong><p class="muted">구조 파악, 치수 확인</p></div>
+        <div class="step"><div class="n">3</div><strong>설계 제안</strong><p class="muted">평면·3D·견적</p></div>
+        <div class="step"><div class="n">4</div><strong>시공/검수</strong><p class="muted">완료 후 사후관리</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
   <section id="about">
     <div class="wrap">
       <h2>회사 소개</h2>
-      <p class="muted">회사 연혁, 미션/비전, 인증 등을 간단히 요약합니다.</p>
       <div class="grid-2" style="margin-top:14px">
         <div class="card">
-          <h3>미션 & 비전</h3>
-          <ul class="list">
-            <li>미션: 고객의 문제를 기술로 해결</li>
-            <li>비전: 산업 표준을 선도하는 혁신 기업</li>
-            <li>가치: 품질·신뢰·지속가능성</li>
+          <h3>우리의 가치</h3>
+          <ul>
+            <li>사람 중심의 공간 경험</li>
+            <li>재료와 디테일의 정직함</li>
+            <li>투명한 커뮤니케이션</li>
           </ul>
         </div>
-        <div class="card timeline">
+        <div class="card">
           <h3>연혁</h3>
-          <div class="item"><strong>2025</strong> · XXXX 인증 획득, 신제품 출시</div>
-          <div class="item"><strong>2023</strong> · 해외 파트너십 체결</div>
-          <div class="item"><strong>2020</strong> · 법인 설립</div>
+          <p class="muted">2020 법인 설립 · 2023 상업공간 100호점 달성 · 2025 디자인 어워드 수상</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="business">
-    <div class="wrap">
-      <h2>사업 영역</h2>
-      <p class="muted">주요 제품/서비스를 3~6개 카드 형태로 소개하세요.</p>
-      <div class="cards" style="margin-top:10px">
-        <div class="card">
-          <img src="/assets/service-1.jpg" alt="서비스1" />
-          <h3>서비스/제품 1</h3>
-          <p class="muted">간단 설명. 핵심 기능/차별점.</p>
-        </div>
-        <div class="card">
-          <img src="/assets/service-2.jpg" alt="서비스2" />
-          <h3>서비스/제품 2</h3>
-          <p class="muted">간단 설명. 핵심 기능/차별점.</p>
-        </div>
-        <div class="card">
-          <img src="/assets/service-3.jpg" alt="서비스3" />
-          <h3>서비스/제품 3</h3>
-          <p class="muted">간단 설명. 핵심 기능/차별점.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="news">
-    <div class="wrap">
-      <h2>공지 & 뉴스</h2>
-      <ul class="list" style="margin-top:10px">
-        <li><strong>[채용]</strong> 00직군 채용 공고 ( ~ 2025-09-30 )</li>
-        <li><strong>[공지]</strong> 추석 연휴 휴무 안내 ( 2025-09-05 ~ 09-09 )</li>
-        <li><strong>[보도]</strong> 신제품 출시 보도자료 배포</li>
-      </ul>
-    </div>
-  </section>
-
+  <!-- Contact -->
   <section id="contact">
     <div class="wrap contact">
       <div>
-        <h2>연락처</h2>
-        <p class="muted">문의 사항을 남겨 주세요. 영업일 기준 24시간 내 회신합니다.</p>
-        <!-- 👉 Formspree, Basin, Getform 등 서버리스 폼 서비스를 사용하세요. action URL만 교체하면 동작합니다. -->
+        <h2>상담 문의</h2>
+        <p class="muted">영업일 기준 24시간 내 회신합니다.</p>
         <form action="https://formspree.io/f/your-id" method="POST">
           <div class="row">
             <div>
@@ -177,44 +228,23 @@
               <input name="name" required />
             </div>
             <div>
-              <label>이메일</label>
-              <input type="email" name="email" required />
+              <label>연락처</label>
+              <input name="phone" required />
             </div>
           </div>
-          <div style="margin:12px 0">
-            <label>문의 내용</label>
-            <textarea name="message" rows="6" required></textarea>
+          <div class="row">
+            <div>
+              <label>용도</label>
+              <select name="type">
+                <option>주거</option>
+                <option>카페/매장</option>
+                <option>오피스</option>
+                <option>기타</option>
+              </select>
+            </div>
+            <div>
+              <label>예산(대략)</label>
+              <input name="budget" placeholder="예: 2천만원" />
+            </div>
           </div>
-          <div class="actions">
-            <button class="btn" type="submit">문의 보내기</button>
-            <span class="badge">개인정보는 문의 처리에만 사용됩니다.</span>
-          </div>
-        </form>
-      </div>
-      <div>
-        <h3>오시는 길</h3>
-        <div class="card">
-          <p class="muted">주소: 서울시 ○○구 ○○로 00, ○○빌딩 10F<br/>Tel: 02-0000-0000 · Email: contact@example.com</p>
-          <!-- 구글/네이버 지도 iframe을 아래에 삽입하세요. 예시는 주석 처리 -->
-          <!-- <iframe src="https://www.google.com/maps/embed?..." width="100%" height="260" style="border:0;border-radius:12px" allowfullscreen="" loading="lazy"></iframe> -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
-      <small>© <span id="y"></span> 회사명. All rights reserved.</small>
-      <div class="muted" style="display:flex;gap:12px">
-        <a href="#about">회사소개</a>
-        <a href="#business">사업영역</a>
-        <a href="#contact">문의하기</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+          <div style="margin
